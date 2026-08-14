@@ -3,19 +3,11 @@
 set -euo pipefail
 
 if command -v uv >/dev/null 2>&1; then
-  echo "Using existing uv; skipping the uv download and installer."
+  echo "Using existing uv."
 else
-  if ! curl -LsSf https://astral.sh/uv/install.sh | sh; then
-    echo "Could not install uv." >&2
-    echo "Next: check network access to astral.sh, then rerun this script." >&2
-    exit 1
-  fi
-  export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
-fi
-
-if ! command -v uv >/dev/null 2>&1; then
-  echo "uv is not on PATH; restart the shell and rerun this script." >&2
-  exit 1
+  echo "uv is required but was not found." >&2
+  echo "Next: review and follow https://docs.astral.sh/uv/getting-started/installation/, then rerun this script." >&2
+  exit 2
 fi
 
 if ! uv tool install --upgrade deckmaker; then
