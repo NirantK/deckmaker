@@ -12,13 +12,13 @@ recovery.
 Install interactively with the open skills CLI:
 
 ```sh
-npx skills add deck-in/deckmaker --skill deckmaker
+npx skills add NirantK/deckmaker --skill deckmaker
 ```
 
 Or install globally and non-interactively for the universal agent path:
 
 ```sh
-npx skills add deck-in/deckmaker --skill deckmaker --agent universal --global --yes
+npx skills add NirantK/deckmaker --skill deckmaker --agent universal --global --yes
 ```
 
 The skill installs the `deckmaker` Python CLI with uv when needed. A PresentationsAI API key is
