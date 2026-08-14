@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deckmaker"
+  short_description: "Build decks from briefs, files, or repository context"
+  default_prompt: "Use $deckmaker to interview me lightly, gather relevant repository facts, and create my presentation deck."
